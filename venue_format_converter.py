@@ -19,6 +19,7 @@ site = None
 
 # Print the header of the CSV file.
 print("Tila,viikonpäivä,Tilatarkennus,Klo,Ryhmä,Aikaväli")
+
 # Go through the dump line by line...
 for i in range(len(lines)):
     
@@ -27,13 +28,15 @@ for i in range(len(lines)):
         site = str(re.sub('\n', '', lines[i+1]) + " - " + re.sub('\n', '', lines[i+2]))
         if "," in site:
             site = site.replace(",", "")
+
     # continue to parse the page by looking at weekdays    
     elif "MA\n" in lines[i] or "TI\n" in lines[i] or "KE\n" in lines[i] or "TO\n" in lines[i] or "PE\n" in lines[i] or "LA\n" in lines[i] or "SU\n" in lines[i]:
         weekday = str(re.sub('\n', '', lines[i]))
+        
     # and finally see if there are matches to your search-string
     elif searchString in lines[i]:
         # check if there is "tilatarkennus" or no... because the formatting is different if there is.
-        if ".2023" in lines[i-2] or ".2024" in lines[i-2] or ".2025" in lines[i-2] or "MA\n" in lines[i-2] or "TI\n" in lines[i-2] or "KE\n" in lines[i-2] or "TO\n" in lines[i-2] or "PE\n" in lines[i-2] or "LA\n" in lines[i-2] or "SU\n" in lines[i-2]:
+        if ".2024" in lines[i-2] or ".2025" in lines[i-2] or ".2026" in lines[i-2] or "MA\n" in lines[i-2] or "TI\n" in lines[i-2] or "KE\n" in lines[i-2] or "TO\n" in lines[i-2] or "PE\n" in lines[i-2] or "LA\n" in lines[i-2] or "SU\n" in lines[i-2]:
             print(site + "," + weekday + ",ei-tilatarkennusta," + re.sub('\n', '', lines[i-1]) + "," + re.sub('\n', '', lines[i]) + "," + re.sub('\n', '', lines[i+1]))
         else:
             print(site + "," + weekday + "," + re.sub('\n', '', lines[i-2]) + "," + re.sub('\n', '', lines[i-1]) + "," + re.sub('\n', '', lines[i]) + "," + re.sub('\n', '', lines[i+1]))
