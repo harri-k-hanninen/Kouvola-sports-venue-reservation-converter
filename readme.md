@@ -15,7 +15,7 @@ Then follow these steps:
 3. Paste the text as PLAIN TEXT to a file and save it as `vakiovuorot_dump.txt`.
     - You can use Notedad or TextEdit to create the file to ensure it is plain text.
 4. Copy the Python `parser.py` script to your machine, edit the `searchString` (defaults to `"KJP") to match your wanted search. For example "Kajo" or "Purha".
-5. Ppen your terminal and run the script
+5. Open your terminal and run the script
 6. Copy the output to your favorite spreadsheet tool, i.e. Microsoft Excel
 7. Move text to colums (separate by comma) and filter as you like.
 8. Happy planning!
