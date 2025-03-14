@@ -17,7 +17,7 @@ Then follow these steps:
 4. Copy the Python `parser.py` script to your machine, edit the `searchString` (defaults to `"KJP") to match your wanted search. For example "Kajo" or "Purha".
 5. Open your terminal and run the script
 6. Copy the output to your favorite spreadsheet tool, i.e. Microsoft Excel
-7. Move text to colums (separate by comma) and filter as you like.
+7. Move text to colums (separate by SEMICOLON (puolipiste in Finnish)) and filter as you like.
 8. Happy planning!
 
 As the City of Kouvola might change the layout, do some checks between the output and original PDF to make sure it still works.
